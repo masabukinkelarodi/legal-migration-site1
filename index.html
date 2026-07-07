@@ -37,40 +37,55 @@
     <!-- NAVIGATION HEADER -->
     <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200/80 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <!-- Logo -->
-            <a href="#" class="flex items-center space-x-3 group">
-                <div class="bg-brand-navy text-white w-10 h-10 flex items-center justify-center rounded font-bold text-xl tracking-wider group-hover:bg-brand-gold transition-colors">LM</div>
-                <span class="font-bold text-lg tracking-tight uppercase border-l-2 border-brand-gold pl-3">Legal Migration<br><span class="text-xs text-brand-gold font-medium block -mt-1 tracking-widest">International</span></span>
+            <!-- Intégration du Logo Principal Doré (DRC) -->
+            <a href="#" class="flex items-center group">
+                <img src="logo-drc.jpg" alt="Legal Migration International DRC" class="h-14 w-auto object-contain transition-transform group-hover:scale-105 duration-200" onerror="this.style.display='none'; document.getElementById('backup-logo').style.display='flex';">
+                
+                <div id="backup-logo" class="hidden items-center space-x-3">
+                    <div class="bg-brand-navy text-white w-10 h-10 flex items-center justify-center rounded font-bold text-xl tracking-wider">LM</div>
+                    <span class="font-bold text-lg tracking-tight uppercase border-l-2 border-brand-gold pl-3 text-brand-navy">Legal Migration<br><span class="text-xs text-brand-gold font-medium block -mt-1 tracking-widest">International</span></span>
+                </div>
             </a>
 
             <!-- Desktop Nav Items -->
             <nav class="hidden md:flex items-center space-x-8 font-medium text-sm text-brand-slate">
-                <a href="#services" class="hover:text-brand-navy transition-colors">Our Services</a>
-                <a href="#countries" class="hover:text-brand-navy transition-colors">Destinations</a>
-                <a href="#process" class="hover:text-brand-navy transition-colors">How it Works</a>
-                <a href="#about" class="hover:text-brand-navy transition-colors">Why LMI</a>
+                <a href="#services" data-i18n="nav-services" class="hover:text-brand-navy transition-colors">Our Services</a>
+                <a href="#countries" data-i18n="nav-destinations" class="hover:text-brand-navy transition-colors">Destinations</a>
+                <a href="#process" data-i18n="nav-process" class="hover:text-brand-navy transition-colors">How it Works</a>
+                <a href="#about" data-i18n="nav-why" class="hover:text-brand-navy transition-colors">Why LMI</a>
             </nav>
 
-            <!-- CTA Actions -->
-            <div class="hidden md:flex items-center space-x-4">
-                <a href="tel:+123456789" class="text-sm font-medium text-brand-slate hover:text-brand-navy"><i class="fa-solid fa-phone mr-2 text-brand-gold"></i> Urgent Case?</a>
-                <a href="#contact" class="bg-brand-navy hover:bg-brand-gold text-white text-sm font-semibold px-5 py-2.5 rounded transition-all shadow-sm">Book a Consultation</a>
+            <!-- CTA Actions & Language Switcher -->
+            <div class="hidden md:flex items-center space-x-6">
+                <!-- Small Language Switcher Button -->
+                <button id="lang-switcher" class="flex items-center space-x-1.5 bg-slate-100 hover:bg-slate-200 text-brand-navy font-semibold text-xs px-2.5 py-1.5 rounded transition-colors border border-slate-200">
+                    <i class="fa-solid fa-globe text-brand-gold text-[10px]"></i>
+                    <span id="lang-label">ENG</span>
+                </button>
+
+                <a href="tel:+123456789" class="text-sm font-medium text-brand-slate hover:text-brand-navy"><i class="fa-solid fa-phone mr-2 text-brand-gold"></i> <span data-i18n="nav-urgent">Urgent Case?</span></a>
+                <a href="#contact" data-i18n="nav-cta" class="bg-brand-navy hover:bg-brand-gold text-white text-sm font-semibold px-5 py-2.5 rounded transition-all shadow-sm">Book a Consultation</a>
             </div>
 
-            <!-- Mobile Menu Button -->
-            <button id="mobile-menu-btn" class="md:hidden text-brand-navy focus:outline-none">
-                <i class="fa-solid fa-bars text-2xl"></i>
-            </button>
+            <!-- Mobile Menu Button & Lang Selector -->
+            <div class="flex items-center space-x-4 md:hidden">
+                <button id="lang-switcher-mobile" class="flex items-center space-x-1 bg-slate-100 text-brand-navy font-semibold text-xs px-2 py-1 rounded border border-slate-200">
+                    <span id="lang-label-mobile">ENG</span>
+                </button>
+                <button id="mobile-menu-btn" class="text-brand-navy focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
         </div>
 
         <!-- Mobile Dropdown Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-6 py-6 space-y-4 shadow-lg absolute w-full left-0">
-            <a href="#services" class="block font-medium text-brand-slate hover:text-brand-navy">Our Services</a>
-            <a href="#countries" class="block font-medium text-brand-slate hover:text-brand-navy">Destinations</a>
-            <a href="#process" class="block font-medium text-brand-slate hover:text-brand-navy">How it Works</a>
-            <a href="#about" class="block font-medium text-brand-slate hover:text-brand-navy">Why LMI</a>
+            <a href="#services" data-i18n="nav-services" class="block font-medium text-brand-slate hover:text-brand-navy">Our Services</a>
+            <a href="#countries" data-i18n="nav-destinations" class="block font-medium text-brand-slate hover:text-brand-navy">Destinations</a>
+            <a href="#process" data-i18n="nav-process" class="block font-medium text-brand-slate hover:text-brand-navy">How it Works</a>
+            <a href="#about" data-i18n="nav-why" class="block font-medium text-brand-slate hover:text-brand-navy">Why LMI</a>
             <hr class="border-slate-100">
-            <a href="#contact" class="block text-center bg-brand-navy text-white font-semibold py-3 rounded">Book a Consultation</a>
+            <a href="#contact" data-i18n="nav-cta" class="block text-center bg-brand-navy text-white font-semibold py-3 rounded">Book a Consultation</a>
         </div>
     </header>
 
@@ -80,37 +95,36 @@
             <div class="lg:col-span-7 space-y-6">
                 <div class="inline-flex items-center space-x-2 bg-slate-100 text-brand-slate text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
                     <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
-                    <span>Global Legal Mobility Expert</span>
+                    <span data-i18n="hero-tag">Global Legal Mobility Expert</span>
                 </div>
                 <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-brand-navy tracking-tight leading-none">
-                    Your relocation. <br><span class="text-brand-gold">Legally secured.</span>
+                    <span data-i18n="hero-title-1">Your relocation.</span> <br><span class="text-brand-gold" data-i18n="hero-title-2">Legally secured.</span>
                 </h1>
-                <p class="text-lg text-brand-slate max-w-xl font-light leading-relaxed">
-                    We replicate the seamless digital transparency Mr. Maxime expects. Relocating your life or business abroad shouldn’t be a bureaucratic nightmare. Our global immigration lawyers manage your visas, residency, and compliance perfectly.
+                <p data-i18n="hero-desc" class="text-lg text-brand-slate max-w-xl font-light leading-relaxed">
+                    We replicate the seamless digital transparency expected from top tier practices. Relocating your life or business abroad shouldn’t be a bureaucratic nightmare. Our global immigration lawyers manage your visas, residency, and compliance perfectly.
                 </p>
 
-                <!-- Interactive Country Selection / Action Box -->
+                <!-- Interactive Country Selection -->
                 <div class="bg-brand-light p-4 rounded-xl border border-slate-200 max-w-2xl shadow-sm grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <div>
-                        <label class="block text-[10px] font-bold uppercase tracking-wider text-brand-slate mb-1">I want to move to</label>
+                        <label data-i18n="form-label-1" class="block text-[10px] font-bold uppercase tracking-wider text-brand-slate mb-1">I want to move to</label>
                         <select class="w-full bg-white border border-slate-200 rounded p-2 text-sm focus:outline-brand-gold">
-                            <option>Europe (Schengen)</option>
-                            <option>North America</option>
-                            <option>United Kingdom</option>
-                            <option>United Arab Emirates</option>
+                            <option>Canada</option>
+                            <option>Greece</option>
+                            <option>Bulgaria</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-[10px] font-bold uppercase tracking-wider text-brand-slate mb-1">Purpose of Stay</label>
+                        <label data-i18n="form-label-2" class="block text-[10px] font-bold uppercase tracking-wider text-brand-slate mb-1">Purpose of Stay</label>
                         <select class="w-full bg-white border border-slate-200 rounded p-2 text-sm focus:outline-brand-gold">
-                            <option>Corporate Investment</option>
-                            <option>Employment / Work</option>
-                            <option>Digital Nomad / Remote</option>
-                            <option>Family Reunification</option>
+                            <option data-i18n="opt-1">Corporate Investment</option>
+                            <option data-i18n="opt-2">Employment / Work</option>
+                            <option data-i18n="opt-3">Digital Nomad / Remote</option>
+                            <option data-i18n="opt-4">Family Reunification</option>
                         </select>
                     </div>
                     <div class="flex items-end">
-                        <a href="#contact" class="w-full text-center bg-brand-gold hover:bg-brand-navy text-white text-sm font-semibold p-2.5 rounded transition-colors uppercase tracking-wider">
+                        <a href="#contact" data-i18n="btn-quote" class="w-full text-center bg-brand-gold hover:bg-brand-navy text-white text-sm font-semibold p-2.5 rounded transition-colors uppercase tracking-wider">
                             Get Quote
                         </a>
                     </div>
@@ -141,9 +155,9 @@
     <section id="services" class="py-24 bg-brand-light">
         <div class="max-w-7xl mx-auto px-6">
             <div class="max-w-2xl mb-16">
-                <h2 class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-3">Tailored Corporate & Individual Solutions</h2>
-                <p class="text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">Our Immigration Practice Groups</p>
-                <p class="mt-4 text-brand-slate font-light">Whether you are expanding a corporate team globally or building a new life, our dedicated legal desks have the answer.</p>
+                <h2 data-i18n="services-tag" class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-3">Tailored Corporate & Individual Solutions</h2>
+                <p data-i18n="services-title" class="text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">Our Immigration Practice Groups</p>
+                <p data-i18n="services-desc" class="mt-4 text-brand-slate font-light">Whether you are expanding a corporate team globally or building a new life, our dedicated legal desks have the answer.</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -151,77 +165,70 @@
                 <div class="bg-white p-8 rounded-xl border border-slate-200/60 shadow-sm hover:shadow-md transition-all flex justify-between flex-col h-full">
                     <div>
                         <div class="w-12 h-12 bg-slate-100 rounded flex items-center justify-center text-brand-navy text-xl mb-6"><i class="fa-solid fa-briefcase"></i></div>
-                        <h3 class="text-xl font-bold text-brand-navy mb-3">Corporate Mobility & Visas</h3>
-                        <p class="text-brand-slate text-sm font-light leading-relaxed mb-6">Sponsorship licenses, intra-company transfers, and complete compliance framework audits for global enterprise personnel.</p>
+                        <h3 data-i18n="s1-title" class="text-xl font-bold text-brand-navy mb-3">Corporate Mobility & Visas</h3>
+                        <p data-i18n="s1-desc" class="text-brand-slate text-sm font-light leading-relaxed mb-6">Sponsorship licenses, intra-company transfers, and complete compliance framework audits for global enterprise personnel.</p>
                     </div>
-                    <a href="#contact" class="text-sm font-semibold text-brand-gold hover:text-brand-navy transition-colors inline-flex items-center">Learn More <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                    <a href="#contact" class="text-sm font-semibold text-brand-gold hover:text-brand-navy transition-colors inline-flex items-center"><span data-i18n="btn-more">Learn More</span> <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
                 </div>
 
                 <!-- Service 2 -->
                 <div class="bg-white p-8 rounded-xl border border-slate-200/60 shadow-sm hover:shadow-md transition-all flex justify-between flex-col h-full">
                     <div>
                         <div class="w-12 h-12 bg-slate-100 rounded flex items-center justify-center text-brand-navy text-xl mb-6"><i class="fa-solid fa-laptop-code"></i></div>
-                        <h3 class="text-xl font-bold text-brand-navy mb-3">Digital Nomad & Freelance</h3>
-                        <p class="text-brand-slate text-sm font-light leading-relaxed mb-6">Fast-tracked remote work visas for content creators, software engineers, and global contractors moving to low-tax jurisdictions.</p>
+                        <h3 data-i18n="s2-title" class="text-xl font-bold text-brand-navy mb-3">Digital Nomad & Freelance</h3>
+                        <p data-i18n="s2-desc" class="text-brand-slate text-sm font-light leading-relaxed mb-6">Fast-tracked remote work visas for content creators, software engineers, and global contractors moving to low-tax jurisdictions.</p>
                     </div>
-                    <a href="#contact" class="text-sm font-semibold text-brand-gold hover:text-brand-navy transition-colors inline-flex items-center">Learn More <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                    <a href="#contact" class="text-sm font-semibold text-brand-gold hover:text-brand-navy transition-colors inline-flex items-center"><span data-i18n="btn-more">Learn More</span> <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
                 </div>
 
                 <!-- Service 3 -->
                 <div class="bg-white p-8 rounded-xl border border-slate-200/60 shadow-sm hover:shadow-md transition-all flex justify-between flex-col h-full">
                     <div>
                         <div class="w-12 h-12 bg-slate-100 rounded flex items-center justify-center text-brand-navy text-xl mb-6"><i class="fa-solid fa-coins"></i></div>
-                        <h3 class="text-xl font-bold text-brand-navy mb-3">Golden Visas & Citizenship</h3>
-                        <p class="text-brand-slate text-sm font-light leading-relaxed mb-6">High-net-worth individual investments, real estate acquisition paths, and strategic dual-citizenship portfolios.</p>
+                        <h3 data-i18n="s3-title" class="text-xl font-bold text-brand-navy mb-3">Golden Visas & Citizenship</h3>
+                        <p data-i18n="s3-desc" class="text-brand-slate text-sm font-light leading-relaxed mb-6">High-net-worth individual investments, real estate acquisition paths, and strategic dual-citizenship portfolios.</p>
                     </div>
-                    <a href="#contact" class="text-sm font-semibold text-brand-gold hover:text-brand-navy transition-colors inline-flex items-center">Learn More <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
+                    <a href="#contact" class="text-sm font-semibold text-brand-gold hover:text-brand-navy transition-colors inline-flex items-center"><span data-i18n="btn-more">Learn More</span> <i class="fa-solid fa-arrow-right ml-2 text-xs"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- DESTINATIONS SECTION -->
+    <!-- DESTINATIONS SECTION (MODIFIÉE) -->
     <section id="countries" class="py-24 bg-white border-t border-b border-slate-200">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
                 <div class="max-w-2xl">
-                    <h2 class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-3">Global Infrastructure</h2>
-                    <p class="text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">Where We Operate</p>
+                    <h2 data-i18n="dest-tag" class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-3">Global Infrastructure</h2>
+                    <p data-i18n="dest-title" class="text-3xl font-extrabold tracking-tight text-brand-navy sm:text-4xl">Where We Operate</p>
                 </div>
-                <p class="text-brand-slate max-w-sm font-light text-sm mt-4 md:mt-0">Local physical presence coupled with global reach ensures accurate, real-time legal counsel at every border.</p>
+                <p data-i18n="dest-desc" class="text-brand-slate max-w-sm font-light text-sm mt-4 md:mt-0">Local physical presence coupled with global reach ensures accurate, real-time legal counsel at every border.</p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Country Card 1 -->
-                <div class="group relative rounded-xl overflow-hidden shadow-sm h-72 bg-slate-300 bg-cover bg-center transition-transform hover:-translate-y-1 duration-300" style="background-image: url('https://images.unsplash.com/photo-1473984849538-57b969557198?auto=format&fit=crop&w=400&q=80')">
+            <!-- Affichage exclusif : Canada, Greece, Bulgaria -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Country Card 1: Canada -->
+                <div class="group relative rounded-xl overflow-hidden shadow-sm h-80 bg-slate-300 bg-cover bg-center transition-transform hover:-translate-y-1 duration-300" style="background-image: url('https://images.unsplash.com/photo-1506970845246-18f21d533b20?auto=format&fit=crop&w=600&q=80')">
                     <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/40 to-transparent"></div>
                     <div class="absolute bottom-6 left-6 right-6 text-white">
-                        <p class="text-xs text-brand-gold uppercase tracking-widest font-bold mb-1">Europe (Schengen)</p>
-                        <h4 class="text-xl font-bold">Spain & Portugal</h4>
+                        <p class="text-xs text-brand-gold uppercase tracking-widest font-bold mb-1" data-i18n="c1-tag">North America</p>
+                        <h4 class="text-2xl font-bold">Canada</h4>
                     </div>
                 </div>
-                <!-- Country Card 2 -->
-                <div class="group relative rounded-xl overflow-hidden shadow-sm h-72 bg-slate-300 bg-cover bg-center transition-transform hover:-translate-y-1 duration-300" style="background-image: url('https://images.unsplash.com/photo-1506970845246-18f21d533b20?auto=format&fit=crop&w=400&q=80')">
+                <!-- Country Card 2: Greece -->
+                <div class="group relative rounded-xl overflow-hidden shadow-sm h-80 bg-slate-300 bg-cover bg-center transition-transform hover:-translate-y-1 duration-300" style="background-image: url('https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80')">
                     <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/40 to-transparent"></div>
                     <div class="absolute bottom-6 left-6 right-6 text-white">
-                        <p class="text-xs text-brand-gold uppercase tracking-widest font-bold mb-1">North America</p>
-                        <h4 class="text-xl font-bold">Canada & USA</h4>
+                        <p class="text-xs text-brand-gold uppercase tracking-widest font-bold mb-1" data-i18n="c2-tag">Europe (Schengen)</p>
+                        <h4 class="text-2xl font-bold" data-i18n="c2-name">Greece</h4>
                     </div>
                 </div>
-                <!-- Country Card 3 -->
-                <div class="group relative rounded-xl overflow-hidden shadow-sm h-72 bg-slate-300 bg-cover bg-center transition-transform hover:-translate-y-1 duration-300" style="background-image: url('https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?auto=format&fit=crop&w=400&q=80')">
+                <!-- Country Card 3: Bulgaria -->
+                <div class="group relative rounded-xl overflow-hidden shadow-sm h-80 bg-slate-300 bg-cover bg-center transition-transform hover:-translate-y-1 duration-300" style="background-image: url('https://images.unsplash.com/photo-1569154941061-e231b4725ef1?auto=format&fit=crop&w=600&q=80')">
                     <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/40 to-transparent"></div>
                     <div class="absolute bottom-6 left-6 right-6 text-white">
-                        <p class="text-xs text-brand-gold uppercase tracking-widest font-bold mb-1">United Kingdom</p>
-                        <h4 class="text-xl font-bold">London HQ Desk</h4>
-                    </div>
-                </div>
-                <!-- Country Card 4 -->
-                <div class="group relative rounded-xl overflow-hidden shadow-sm h-72 bg-slate-300 bg-cover bg-center transition-transform hover:-translate-y-1 duration-300" style="background-image: url('https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=400&q=80')">
-                    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/40 to-transparent"></div>
-                    <div class="absolute bottom-6 left-6 right-6 text-white">
-                        <p class="text-xs text-brand-gold uppercase tracking-widest font-bold mb-1">Middle East</p>
-                        <h4 class="text-xl font-bold">United Arab Emirates</h4>
+                        <p class="text-xs text-brand-gold uppercase tracking-widest font-bold mb-1" data-i18n="c3-tag">Europe (Balkans)</p>
+                        <h4 class="text-2xl font-bold" data-i18n="c3-name">Bulgaria</h4>
                     </div>
                 </div>
             </div>
@@ -232,56 +239,56 @@
     <section id="process" class="py-24 bg-brand-light">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center max-w-xl mx-auto mb-20">
-                <h2 class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-3">Our Transparent Roadmap</h2>
-                <p class="text-3xl font-extrabold text-brand-navy">Three Steps to Freedom of Movement</p>
+                <h2 data-i18n="roadmap-tag" class="text-xs font-bold uppercase tracking-wider text-brand-gold mb-3">Our Transparent Roadmap</h2>
+                <p data-i18n="roadmap-title" class="text-3xl font-extrabold text-brand-navy">Three Steps to Freedom of Movement</p>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
                 <!-- Step 1 -->
                 <div class="relative space-y-4">
                     <div class="text-6xl font-extrabold text-slate-200 select-none">01</div>
-                    <h4 class="text-xl font-bold text-brand-navy">Digital Assessment</h4>
-                    <p class="text-brand-slate font-light text-sm leading-relaxed">Book your 30-minute consultation slot. Our artificial intelligence pre-screens your compliance matching before your live call with our assigned migration lawyer.</p>
+                    <h4 data-i18n="step1-title" class="text-xl font-bold text-brand-navy">Digital Assessment</h4>
+                    <p data-i18n="step1-desc" class="text-brand-slate font-light text-sm leading-relaxed">Book your 30-minute consultation slot. Our artificial intelligence pre-screens your compliance matching before your live call with our assigned migration lawyer.</p>
                 </div>
                 <!-- Step 2 -->
                 <div class="relative space-y-4">
                     <div class="text-6xl font-extrabold text-slate-200 select-none">02</div>
-                    <h4 class="text-xl font-bold text-brand-navy">Document Assembly & Vault</h4>
-                    <p class="text-brand-slate font-light text-sm leading-relaxed">Upload birth certificates, company records, and financial statements directly into our secure, hyper-encrypted digital legal vault for immediate translation and validation.</p>
+                    <h4 data-i18n="step2-title" class="text-xl font-bold text-brand-navy">Document Assembly & Vault</h4>
+                    <p data-i18n="step2-desc" class="text-brand-slate font-light text-sm leading-relaxed">Upload birth certificates, company records, and financial statements directly into our secure, hyper-encrypted digital legal vault for immediate translation and validation.</p>
                 </div>
                 <!-- Step 3 -->
                 <div class="relative space-y-4">
                     <div class="text-6xl font-extrabold text-slate-200 select-none">03</div>
-                    <h4 class="text-xl font-bold text-brand-navy">Submission & Representation</h4>
-                    <p class="text-brand-slate font-light text-sm leading-relaxed">We file directly via digital API and state authorities. We remain on record with the immigration ministries until your passport stamps or residence cards arrive.</p>
+                    <h4 data-i18n="step3-title" class="text-xl font-bold text-brand-navy">Submission & Representation</h4>
+                    <p data-i18n="step3-desc" class="text-brand-slate font-light text-sm leading-relaxed">We file directly via digital API and state authorities. We remain on record with the immigration ministries until your passport stamps or residence cards arrive.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- INTERACTIVE CONTACT / BRIEFING FORM -->
+    <!-- INTERACTIVE CONTACT FORM -->
     <section id="contact" class="py-24 bg-brand-navy text-white relative overflow-hidden">
         <div class="absolute inset-0 bg-[radial-gradient(#1E293B_1px,transparent_1px)] [background-size:16px_16px] opacity-30"></div>
         <div class="max-w-4xl mx-auto px-6 relative z-10 text-center">
-            <h2 class="text-xs font-bold text-brand-gold uppercase tracking-widest mb-3">Initiate Onboarding</h2>
-            <h3 class="text-3xl sm:text-4xl font-extrabold mb-6 tracking-tight">Ready to schedule your case study briefing?</h3>
-            <p class="text-slate-400 font-light max-w-xl mx-auto mb-12 text-sm leading-relaxed">Fill out your parameters and secure a binding legal review with an active, certified bar lawyer within 24 hours.</p>
+            <h2 data-i18n="f-tag" class="text-xs font-bold text-brand-gold uppercase tracking-widest mb-3">Initiate Onboarding</h2>
+            <h3 data-i18n="f-title" class="text-3xl sm:text-4xl font-extrabold mb-6 tracking-tight">Ready to schedule your case study briefing?</h3>
+            <p data-i18n="f-desc" class="text-slate-400 font-light max-w-xl mx-auto mb-12 text-sm leading-relaxed">Fill out your parameters and secure a binding legal review with an active, certified bar lawyer within 24 hours.</p>
             
             <form class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left max-w-2xl mx-auto bg-slate-900/50 p-8 rounded-2xl border border-slate-800 backdrop-blur-sm shadow-xl" onsubmit="event.preventDefault(); alert('Inquiry Simulated Successfully!');">
                 <div>
-                    <label class="block text-xs uppercase tracking-wider text-slate-400 font-semibold mb-2">Full Name</label>
+                    <label data-i18n="f-name" class="block text-xs uppercase tracking-wider text-slate-400 font-semibold mb-2">Full Name</label>
                     <input type="text" placeholder="John Doe" class="w-full bg-slate-800 border border-slate-700 rounded px-4 py-3 text-sm focus:outline-none focus:border-brand-gold text-white" required>
                 </div>
                 <div>
-                    <label class="block text-xs uppercase tracking-wider text-slate-400 font-semibold mb-2">Email Address</label>
+                    <label data-i18n="f-email" class="block text-xs uppercase tracking-wider text-slate-400 font-semibold mb-2">Email Address</label>
                     <input type="email" placeholder="john@example.com" class="w-full bg-slate-800 border border-slate-700 rounded px-4 py-3 text-sm focus:outline-none focus:border-brand-gold text-white" required>
                 </div>
                 <div class="sm:col-span-2">
-                    <label class="block text-xs uppercase tracking-wider text-slate-400 font-semibold mb-2">Describe Your Migration Goal</label>
+                    <label data-i18n="f-msg" class="block text-xs uppercase tracking-wider text-slate-400 font-semibold mb-2">Describe Your Migration Goal</label>
                     <textarea rows="4" placeholder="Mention target country and urgency level..." class="w-full bg-slate-800 border border-slate-700 rounded px-4 py-3 text-sm focus:outline-none focus:border-brand-gold text-white resize-none" required></textarea>
                 </div>
                 <div class="sm:col-span-2 mt-2">
-                    <button type="submit" class="w-full bg-brand-gold hover:bg-white hover:text-brand-navy text-white text-sm font-bold py-4 rounded transition-all uppercase tracking-widest">
+                    <button type="submit" data-i18n="f-btn" class="w-full bg-brand-gold hover:bg-white hover:text-brand-navy text-white text-sm font-bold py-4 rounded transition-all uppercase tracking-widest">
                         Submit Legal Inquiry
                     </button>
                 </div>
@@ -292,9 +299,13 @@
     <!-- FOOTER -->
     <footer class="bg-white border-t border-slate-200 py-12 text-xs text-brand-slate">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-            <div class="flex items-center space-x-3">
-                <div class="bg-brand-navy text-white w-6 h-6 flex items-center justify-center rounded font-bold text-xs">LM</div>
-                <span class="font-bold uppercase tracking-tight text-brand-navy">Legal Migration International &copy; 2026</span>
+            <!-- Intégration du Logo Rond SAMI dans le footer -->
+            <div class="flex items-center space-x-4">
+                <img src="logo-sami.jpg" alt="SAMI La Migration Internationale" class="h-14 w-auto object-contain rounded-full shadow-sm">
+                <div>
+                    <span class="font-bold uppercase tracking-tight text-brand-navy block text-sm">SAMI</span>
+                    <span class="text-slate-400 font-medium text-[11px]">La Migration Internationale &copy; 2026</span>
+                </div>
             </div>
             <div class="flex flex-wrap justify-center gap-6 font-medium">
                 <a href="#" class="hover:text-brand-navy">Privacy Statement</a>
@@ -307,6 +318,7 @@
 
     <!-- INTERACTIVE JAVASCRIPT LAYER -->
     <script>
+        // Mobile Menu Script
         const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
 
@@ -325,6 +337,71 @@
                 icon.classList.add('fa-bars');
             });
         });
+
+        // Dictionary Data for Translation System (English & Russian Only)
+        const resources = {
+            en: {
+                "nav-services": "Our Services", "nav-destinations": "Destinations", "nav-process": "How it Works", "nav-why": "Why LMI", "nav-urgent": "Urgent Case?", "nav-cta": "Book a Consultation",
+                "hero-tag": "Global Legal Mobility Expert", "hero-title-1": "Your relocation.", "hero-title-2": "Legally secured.",
+                "hero-desc": "We replicate the seamless digital transparency expected from top tier practices. Relocating your life or business abroad shouldn’t be a bureaucratic nightmare. Our global immigration lawyers manage your visas, residency, and compliance perfectly.",
+                "form-label-1": "I want to move to", "form-label-2": "Purpose of Stay", "opt-1": "Corporate Investment", "opt-2": "Employment / Work", "opt-3": "Digital Nomad / Remote", "opt-4": "Family Reunification", "btn-quote": "Get Quote",
+                "services-tag": "Tailored Corporate & Individual Solutions", "services-title": "Our Immigration Practice Groups", "services-desc": "Whether you are expanding a corporate team globally or building a new life, our dedicated legal desks have the answer.",
+                "s1-title": "Corporate Mobility & Visas", "s1-desc": "Sponsorship licenses, intra-company transfers, and complete compliance framework audits for global enterprise personnel.",
+                "s2-title": "Digital Nomad & Freelance", "s2-desc": "Fast-tracked remote work visas for content creators, software engineers, and global contractors moving to low-tax jurisdictions.",
+                "s3-title": "Golden Visas & Citizenship", "s3-desc": "High-net-worth individual investments, real estate acquisition paths, and strategic dual-citizenship portfolios.", "btn-more": "Learn More",
+                "dest-tag": "Global Infrastructure", "dest-title": "Where We Operate", "dest-desc": "Local physical presence coupled with global reach ensures accurate, real-time legal counsel at every border.",
+                "c1-tag": "North America", "c2-tag": "Europe (Schengen)", "c2-name": "Greece", "c3-tag": "Europe (Balkans)", "c3-name": "Bulgaria",
+                "roadmap-tag": "Our Transparent Roadmap", "roadmap-title": "Three Steps to Freedom of Movement",
+                "step1-title": "Digital Assessment", "step1-desc": "Book your 30-minute consultation slot. Our artificial intelligence pre-screens your compliance matching before your live call with our assigned migration lawyer.",
+                "step2-title": "Document Assembly & Vault", "step2-desc": "Upload birth certificates, company records, and financial statements directly into our secure, hyper-encrypted digital legal vault for immediate translation and validation.",
+                "step3-title": "Submission & Representation", "step3-desc": "We file directly via digital API and state authorities. We remain on record with the immigration ministries until your passport stamps or residence cards arrive.",
+                "f-tag": "Initiate Onboarding", "f-title": "Ready to schedule your case study briefing?", "f-desc": "Fill out your parameters and secure a binding legal review with an active, certified bar lawyer within 24 hours.",
+                "f-name": "Full Name", "f-email": "Email Address", "f-msg": "Describe Your Migration Goal", "f-btn": "Submit Legal Inquiry"
+            },
+            ru: {
+                "nav-services": "Наши услуги", "nav-destinations": "Направления", "nav-process": "Как это работает", "nav-why": "Почему LMI", "nav-urgent": "Срочное дело?", "nav-cta": "Записаться на консультацию",
+                "hero-tag": "Международный эксперт по правовой мобильности", "hero-title-1": "Ваш переезд.", "hero-title-2": "Юридически защищен.",
+                "hero-desc": "Мы обеспечиваем безупречную цифровую прозрачность, ожидаемую от лучших практик. Переезд за границу не должен превращаться в бюрократический кошмар. Наши юристы полностью управляют вашими визами, резидентством и комплаенсом.",
+                "form-label-1": "Я хочу переехать в", "form-label-2": "Цель пребывания", "opt-1": "Корпоративные инвестиции", "opt-2": "Трудоустройство / Работа", "opt-3": "Цифровой кочевник / Удаленка", "opt-4": "Воссоединение семьи", "btn-quote": "Получить расчет",
+                "services-tag": "Индивидуальные корпоративные и личные решения", "services-title": "Наши иммиграционные практики", "services-desc": "Независимо от того, расширяете ли вы международную корпоративную команду или строите новую жизнь, у наших юристов есть решение.",
+                "s1-title": "Корпоративная мобильность и визы", "s1-desc": "Спонсорские лицензии, внутрикорпоративные переводы и полный аудит комплаенса для персонала международных предприятий.",
+                "s2-title": "Цифровые кочевники и фриланс", "s2-desc": "Ускоренное получение виз для удаленной работы для создателей контента, инженеров программного обеспечения и подрядчиков.",
+                "s3-title": "Золотые визы и гражданство", "s3-desc": "Инвестиции для частных лиц с высоким уровнем дохода, покупка недвижимости и стратегические портфели двойного гражданства.", "btn-more": "Подробнее",
+                "dest-tag": "Глобальная инфраструктура", "dest-title": "Где мы работаем", "dest-desc": "Местное физическое присутствие в сочетании с глобальным охватом обеспечивает точную юридическую помощь на каждой границе.",
+                "c1-tag": "Северная Америка", "c2-tag": "Европа (Шенген)", "c2-name": "Греция", "c3-tag": "Европа (Балканы)", "c3-name": "Болгария",
+                "roadmap-tag": "Наша прозрачная дорожная карта", "roadmap-title": "Три шага к свободе передвижения",
+                "step1-title": "Цифровая оценка", "step1-desc": "Забронируйте 30-минутное окно. Наш искусственный интеллект предварительно проверяет соответствие требованиям перед звонком с юристом.",
+                "step2-title": "Сбор документов и хранилище", "step2-desc": "Загружайте свидетельства и выписки в наше зашифрованное юридическое хранилище для мгновенного перевода и валидации.",
+                "step3-title": "Подача и представительство", "step3-desc": "Мы подаем документы через API напрямую в государственные органы и остаемся на связи с министерствами до получения документов.",
+                "f-tag": "Начать оформление", "f-title": "Готовы запланировать разбор вашего дела?", "f-desc": "Заполните параметры и получите юридический разбор от действующего сертифицированного адвоката в течение 24 часов.",
+                "f-name": "Полное имя", "f-email": "Email адрес", "f-msg": "Опишите вашу цель иммиграции", "f-btn": "Отправить юридический запрос"
+            }
+        };
+
+        let currentLang = 'en';
+        const langBtn = document.getElementById('lang-switcher');
+        const langBtnMobile = document.getElementById('lang-switcher-mobile');
+        const langLabel = document.getElementById('lang-label');
+        const langLabelMobile = document.getElementById('lang-label-mobile');
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'en' ? 'ru' : 'en';
+            
+            // Update labels
+            langLabel.innerText = currentLang === 'en' ? 'ENG' : 'RUS';
+            langLabelMobile.innerText = currentLang === 'en' ? 'ENG' : 'RUS';
+            
+            // Translate elements
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (resources[currentLang][key]) {
+                    el.innerText = resources[currentLang][key];
+                }
+            });
+        }
+
+        langBtn.addEventListener('click', toggleLanguage);
+        langBtnMobile.addEventListener('click', toggleLanguage);
     </script>
 </body>
 </html>
